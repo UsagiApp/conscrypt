@@ -333,6 +333,7 @@ model {
                                 "-fvisibility=hidden",
                                 "-lstdc++",
                                 "-lpthread",
+                                "-Wl,-z,max-page-size=16384",
                                 libPath + "/ssl/libssl.a",
                                 libPath + "/crypto/libcrypto.a"
                     } else if (toolChain in VisualCpp) {

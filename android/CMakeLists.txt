@@ -15,6 +15,9 @@ include_directories(../common/src/jni/main/include/
 find_library(android-log-lib log)
 target_link_libraries(conscrypt_jni ${android-log-lib} ssl crypto)
 
+# Support 16KB page sizes for Android 15+ compatibility
+target_link_options(conscrypt_jni PRIVATE "-Wl,-z,max-page-size=16384")
+
 add_definitions(-DANDROID
                 -fvisibility=hidden
                 -DBORINGSSL_SHARED_LIBRARY

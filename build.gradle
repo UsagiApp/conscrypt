@@ -6,6 +6,8 @@ buildscript {
     ext.errorproneJavacVersion = '9+181-r4173-1'
     repositories {
         google()
+        mavenCentral()
+        gradlePluginPortal()
         jcenter()
     }
     dependencies {
@@ -141,7 +143,6 @@ subprojects {
     repositories {
         mavenCentral()
         mavenLocal()
-        jcenter()
     }
 
     jacoco {
